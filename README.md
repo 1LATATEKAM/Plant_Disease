@@ -33,4 +33,39 @@
           ML model processes the image
           Output: Healthy or Diseased
 
+
+
+          Algorithm Steps for ML part
+-Start
+-Input Image
+  Capture or upload an image of the plant leaf
+-Preprocess Image
+  Resize image to 224 × 224 pixels
+  Normalize pixel values (scale between 0 and 1)
+-Load Pre-trained Model
+  Load MobileNetV2 model without top layers
+  Freeze base layers (to retain learned features)
+-Feature Extraction
+  Pass the image through MobileNetV2
+  Extract features like texture, color, and patterns
+-Add Classification Layers
+  Add:
+    Global Average Pooling layer
+    Dense layer (ReLU activation)
+    Output layer (Softmax activation)
+-Train Model
+  Train using labeled dataset:
+    Class 1 → Healthy
+    Class 2 → Diseased
+  Use data augmentation to improve performance
+-Model Prediction
+  Input new image
+  Model predicts class probabilities
+-Output Result
+  Display:
+    Predicted class (Healthy / Diseased)
+    Confidence percentage
+-End
+
+
 “Due to limited dataset availability, the model was optimized using augmentation and transfer learning techniques.”
